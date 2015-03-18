@@ -1,3 +1,3 @@
 # logr
-Simple Sinatra web app to receive and log JSON formatted data.
+Simple Sinatra web app for receiving and logging JSON formatted data.
 Prepared for Rack.
