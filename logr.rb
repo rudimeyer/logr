@@ -1,5 +1,6 @@
 require "sinatra/base"
 require 'json'
+require 'yaml'
 
 class Logr < Sinatra::Base
 	post '/logr' do
@@ -7,7 +8,7 @@ class Logr < Sinatra::Base
 		@data_path = File.join(File.expand_path(File.dirname(__FILE__)), @config['relative_data_path'])
 
 		data = JSON.parse request.body.read
-		if data['token'] == config['token']
+		if data['token'] == @config['token']
 			data.delete('token')
 			log data
 		else
